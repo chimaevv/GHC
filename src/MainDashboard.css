@@ -1,0 +1,64 @@
+/* src/MainDashboard.css */
+
+.dashboard {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .weather-info {
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .weather-info p {
+    margin: 10px 0;
+  }
+  
+  .outfit-recommendation {
+    background-color: #e0ffe0;
+    padding: 15px;
+    border-radius: 10px;
+  }
+  
+  .avatar {
+    margin: 20px 0;
+  }
+  
+  .avatar img {
+    width: 150px;
+    height: auto;
+
+  }
+
+  /* Error message styling */
+.error-message {
+    color: red;
+    margin-top: 10px;
+  }
+  
+  /* Input field styling */
+  input[type="text"] {
+    padding: 10px;
+    font-size: 14px;
+    margin-right: 10px;
+    width: 200px;
+    font-family: 'Press Start 2P', cursive;
+  }
+  
+  /* Button styling */
+  button {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-family: 'Press Start 2P', cursive;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  /* Ensure the button doesn't affect other buttons */
+  .dashboard > button {
+    margin-top: 20px;
+  }
