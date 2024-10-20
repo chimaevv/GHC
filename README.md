@@ -1,1 +1,2 @@
 # GHC
+Hoos Life Hacks provides real-time life hack recommendations based on current weather conditions. Users can enter their location to receive weather information, and based on the temperature and time of day, the app suggests tips like staying warm, managing heat, or improving productivity. The app also allows users to select their “vibe” (relaxed, productive, or adventurous), and it provides tailored task suggestions for how they can maximize their day based on that vibe.
