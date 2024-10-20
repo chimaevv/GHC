@@ -1,11 +1,14 @@
-// src/Avatar.js
 import React from 'react';
+import './Avatar.css'; // Import the CSS file
 
 function Avatar() {
   return (
-    <div>
-      {/* Placeholder for the pixelated avatar */}
-      <p>[Pixelated Avatar Placeholder]</p>
+    <div className="avatar-container">
+      <img 
+        src="https://www.pngall.com/wp-content/uploads/14/Sanrio-PNG-Cutout.png" 
+        alt="Sanrio Avatar" 
+        className="avatar-image" 
+      />
     </div>
   );
 }

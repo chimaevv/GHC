@@ -1,64 +1,89 @@
-/* src/MainDashboard.css */
 
 .dashboard {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .weather-info {
-    background-color: #f0f0f0;
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .weather-info p {
-    margin: 10px 0;
-  }
-  
-  .outfit-recommendation {
-    background-color: #e0ffe0;
-    padding: 15px;
-    border-radius: 10px;
-  }
-  
-  .avatar {
-    margin: 20px 0;
-  }
-  
-  .avatar img {
-    width: 150px;
-    height: auto;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Source Code Pro', monospace; 
+  background-color: #ffe6f0; 
+  border-radius: 30px; 
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+  position: relative; 
+  min-height: 400px;
+  margin-top: 40px; 
+  border: 2px solid #ff80ab; 
+}
 
-  }
 
-  /* Error message styling */
+.dashboard::before {
+  content: '❤️ ❤️ ❤️';
+  position: absolute;
+  top: -40px; 
+  left: 50%;
+  transform: translateX(-50%); 
+  font-size: 2rem;
+  animation: float 2s infinite; 
+}
+
+
+@keyframes float {
+0% { transform: translate(-50%, 0); } 
+50% { transform: translate(-50%, -10px); }
+100% { transform: translate(-50%, 0); }
+}
+
+
+
+.weather-info {
+  background-color: #ffb3c6;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  color: #ff4081; 
+  border: 2px solid #ff80ab; 
+}
+
+
+.life-hack-recommendation, .task-suggestion {
+  background-color: #ffe0f7; 
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  color: #d81b60; 
+  font-size: 1.1rem;
+  border: 2px solid #ff80ab; 
+}
+
+
+.avatar img {
+  width: 120px;
+  height: auto;
+  border-radius: 50%;
+  border: 3px solid #ff80ab; 
+  margin-bottom: 15px;
+}
+
+
+button {
+  background-color: #f48fb1; 
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  font-family: 'Source Code Pro', monospace;
+  box-shadow: 0 4px 6px rgba(255, 105, 180, 0.3); 
+}
+
+button:hover {
+  background-color: #ff4081;
+  transform: scale(1.05); 
+}
+
+
 .error-message {
-    color: red;
-    margin-top: 10px;
-  }
-  
-  /* Input field styling */
-  input[type="text"] {
-    padding: 10px;
-    font-size: 14px;
-    margin-right: 10px;
-    width: 200px;
-    font-family: 'Press Start 2P', cursive;
-  }
-  
-  /* Button styling */
-  button {
-    padding: 10px 20px;
-    font-size: 14px;
-    font-family: 'Press Start 2P', cursive;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  
-  /* Ensure the button doesn't affect other buttons */
-  .dashboard > button {
-    margin-top: 20px;
-  }
+  color: red;
+  font-size: 1.1rem;
+}

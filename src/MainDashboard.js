@@ -1,13 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Avatar from './Avatar';
 import './MainDashboard.css';
 import { recommendations } from './recommendations';
 
-function MainDashboard() {
+function MainDashboard({ vibe }) {
   const [weatherData, setWeatherData] = useState(null);
   const [manualLocation, setManualLocation] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  useEffect(() => {
+    if (vibe) {
+      console.log(`Selected vibe: ${vibe}`); // Confirm that the vibe is passed
+    }
+  }, [vibe]);
 
   const fetchWeatherByManualLocation = async () => {
     if (!manualLocation) {
@@ -35,8 +41,6 @@ function MainDashboard() {
       );
       const data = await response.json();
 
-      console.log('API Response:', data);
-
       if (data.error) {
         setError(data.error.message);
         setWeatherData(null);
@@ -45,7 +49,6 @@ function MainDashboard() {
         setError(null);
       }
     } catch (err) {
-      console.error('Fetch error:', err);
       setError('An error occurred while fetching data.');
       setWeatherData(null);
     } finally {
@@ -71,6 +74,16 @@ function MainDashboard() {
     const recommendation = recommendations[tempCategory]?.[timeOfDay] || 'Here’s a useful tip based on today’s weather!';
 
     return recommendation;
+  };
+
+  const getTaskSuggestion = () => {
+    const taskSuggestions = {
+      relaxed: 'Take a break and read a book or listen to calming music.',
+      productive: 'Start your to-do list! Focus on the most important tasks first.',
+      adventurous: 'Try something new today! Maybe explore a new hobby or take a walk in a new neighborhood.'
+    };
+
+    return taskSuggestions[vibe] || 'Choose a vibe to get task suggestions!';
   };
 
   return (
@@ -115,6 +128,12 @@ function MainDashboard() {
               <strong>Life Hack Recommendation:</strong>
             </p>
             <p>{getLifeHackRecommendation()}</p>
+          </div>
+          <div className="task-suggestion">
+            <p>
+              <strong>Task Suggestion:</strong>
+            </p>
+            <p>{getTaskSuggestion()}</p>
           </div>
           <button
             onClick={() => {
